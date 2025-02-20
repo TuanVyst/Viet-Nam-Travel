@@ -1,24 +1,43 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     font-size: 16px;
     margin: 0;
     padding: 0;
+    background-color: #f8f9fa;
 }
 
 /* Header */
 header {
-    background-color: #2E86C1;
+    background: linear-gradient(to right, #2E86C1, #1B4F72);
     color: white;
-    padding: 15px;
+    padding: 20px;
     text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Skip to main content (chỉ hiển thị khi focus) */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    background: #ffcc00;
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 10px;
 }
 
 /* Navigation */
 nav {
     background-color: #1B4F72;
     padding: 10px;
-    display: inline-block;
-    width: 80%;
+    text-align: center;
 }
 
 nav ul {
@@ -26,30 +45,38 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    justify-content: center;
 }
 
 nav li {
-    display: inline-block;
-    width: 100px;
+    /* display: inline-block; */
+    width: 120px;
     text-align: center;
 }
 
 nav a {
     text-decoration: none;
     color: white;
-    padding: 10px;
+    padding: 10px 15px;
     display: block;
+    font-size: 18px;
+    transition: background 0.3s;
 }
 
-nav img {
-    width: 10%;
+nav a:hover {
+    background: #2980b9;
+    border-radius: 5px;
 }
 
 /* Main content */
 main {
-    background-color: #F2F3F4;
+    background: white;
     font-size: 18px;
-    padding: 20px;
+    padding: 30px;
+    max-width: 900px;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer */
@@ -57,22 +84,25 @@ footer {
     background-color: #34495E;
     color: white;
     text-align: center;
-    padding: 10px;
-    position: fixed;
+    padding: 15px;
+    position: relative;
     bottom: 0;
     width: 100%;
+    font-size: 14px;
 }
 
-/* H1 heading */
+/* Headings */
 h1 {
     text-align: center;
     font-family: 'Georgia', serif;
-    color: #154360;
+    color: #fff;
+    font-size: 32px;
 }
 
-/* Paragraph formatting */
+/* Typography */
 p {
-    line-height: 1.6;
+    line-height: 1.8;
+    color: #333;
 }
 
 /* Grid layout */
@@ -84,13 +114,31 @@ p {
     row-gap: 20px;
 }
 
+/* Ensure only images in .grid are styled */
 .grid img {
     width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Flex layout */
+/* Flexbox */
 .flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        width: 100%;
+    }
+
+    .grid {
+        grid-template-columns: 100%;
+    }
 }
