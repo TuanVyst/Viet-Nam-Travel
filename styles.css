@@ -1,4 +1,3 @@
-/* General styling for the body */
 body {
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -18,6 +17,8 @@ header {
 nav {
     background-color: #1B4F72;
     padding: 10px;
+    display: inline-block;
+    width: 80%;
 }
 
 nav ul {
@@ -38,6 +39,10 @@ nav a {
     color: white;
     padding: 10px;
     display: block;
+}
+
+nav img {
+    width: 10%;
 }
 
 /* Main content */
@@ -68,4 +73,24 @@ h1 {
 /* Paragraph formatting */
 p {
     line-height: 1.6;
+}
+
+/* Grid layout */
+.grid {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.grid img {
+    width: 100%;
+}
+
+/* Flex layout */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
